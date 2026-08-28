@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mannat | Student Profile</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 30px 15px;
+
+            background:
+                radial-gradient(circle at top left, #263b73, transparent 40%),
+                radial-gradient(circle at bottom right, #4a286b, transparent 40%),
+                #090d1c;
+
+            color: white;
+        }
+
+        .card {
+            width: 100%;
+            max-width: 850px;
+
+            padding: 50px 45px;
+
+            border-radius: 30px;
+
+            background: rgba(18, 25, 48, 0.92);
+
+            border: 1px solid rgba(150, 160, 220, 0.25);
+
+            box-shadow:
+                0 30px 80px rgba(0, 0, 0, 0.55),
+                inset 0 0 50px rgba(120, 130, 255, 0.04);
+
+            text-align: center;
+
+            animation: appear 0.9s ease;
+        }
+
+
+        @keyframes appear {
+
+            from {
+                opacity: 0;
+                transform: translateY(25px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+        }
+
+
+        .profile {
+            width: 155px;
+            height: 155px;
+
+            border-radius: 50%;
+
+            object-fit: cover;
+
+            border: 4px solid #8995ff;
+
+            box-shadow:
+                0 0 0 8px rgba(137, 149, 255, 0.08),
+                0 0 35px rgba(137, 149, 255, 0.25);
+
+            margin-bottom: 25px;
+        }
+
+
+        h1 {
+            font-size: 48px;
+            margin-bottom: 8px;
+            letter-spacing: -1px;
+        }
+
+
+        h1 span {
+            color: #9ba6ff;
+        }
+
+
+        .course {
+            font-size: 20px;
+            color: #e1e5ff;
+            margin-bottom: 7px;
+        }
+
+
+        .college {
+            font-size: 17px;
+            color: #aeb8d4;
+        }
+
+
+        .line {
+            width: 90px;
+            height: 4px;
+
+            background: #8995ff;
+
+            border-radius: 10px;
+
+            margin: 28px auto 35px;
+        }
+
+
+        .section {
+            margin-top: 35px;
+        }
+
+
+        .section h2 {
+            font-size: 25px;
+            margin-bottom: 18px;
+        }
+
+
+        .section p {
+            max-width: 680px;
+
+            margin: auto;
+
+            color: #c1c9df;
+
+            font-size: 17px;
+
+            line-height: 1.8;
+        }
+
+
+        .tags {
+            display: flex;
+
+            justify-content: center;
+
+            flex-wrap: wrap;
+
+            gap: 12px;
+
+            max-width: 700px;
+
+            margin: auto;
+        }
+
+
+        .tag {
+            padding: 11px 18px;
+
+            border-radius: 30px;
+
+            background: rgba(103, 116, 170, 0.28);
+
+            border: 1px solid rgba(150, 160, 220, 0.18);
+
+            color: #e8ebff;
+
+            font-size: 15px;
+
+            transition: 0.3s;
+        }
+
+
+        .tag:hover {
+            transform: translateY(-3px);
+
+            background: rgba(130, 142, 210, 0.35);
+        }
+
+
+        .details {
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 15px;
+
+            max-width: 700px;
+
+            margin: 25px auto 0;
+        }
+
+
+        .detail {
+            padding: 20px 15px;
+
+            border-radius: 18px;
+
+            background: rgba(35, 45, 78, 0.65);
+
+            border: 1px solid rgba(150, 160, 220, 0.15);
+        }
+
+
+        .detail h3 {
+            font-size: 13px;
+
+            color: #929eff;
+
+            letter-spacing: 1px;
+
+            margin-bottom: 8px;
+        }
+
+
+        .detail p {
+            font-size: 15px;
+
+            color: #e5e8f5;
+        }
+
+
+        .github {
+            display: inline-block;
+
+            margin-top: 38px;
+
+            padding: 15px 28px;
+
+            border-radius: 30px;
+
+            background: #8995ff;
+
+            color: #101426;
+
+            text-decoration: none;
+
+            font-weight: bold;
+
+            font-size: 16px;
+
+            transition: 0.3s;
+
+            box-shadow: 0 10px 30px rgba(137, 149, 255, 0.2);
+        }
+
+
+        .github:hover {
+            transform: translateY(-4px);
+
+            box-shadow: 0 15px 35px rgba(137, 149, 255, 0.35);
+        }
+
+
+        .footer {
+            margin-top: 35px;
+
+            color: #737e9f;
+
+            font-size: 13px;
+        }
+
+
+        @media (max-width: 650px) {
+
+            .card {
+                padding: 40px 22px;
+            }
+
+
+            h1 {
+                font-size: 38px;
+            }
+
+
+            .course {
+                font-size: 18px;
+            }
+
+
+            .profile {
+                width: 135px;
+                height: 135px;
+            }
+
+
+            .details {
+                grid-template-columns: 1fr;
+            }
+
+
+            .section p {
+                font-size: 16px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+    <main class="card">
+
+
+        <!-- Profile -->
+
+        <img
+            src="profile.jpg"
+            alt="Mannat's profile picture"
+            class="profile"
+        >
+
+
+        <h1>
+            Hi, I'm <span>Mannat</span> 👋
+        </h1>
+
+
+        <p class="course">
+            B.Tech Computer Science & Engineering Core
+        </p>
+
+
+        <p class="college">
+            DAVIET, Jalandhar
+        </p>
+
+
+        <div class="line"></div>
+
+
+        <!-- About -->
+
+        <section class="section">
+
+            <h2> 🤗About Me</h2>
+
+            <p>
+                I am a curious B.Tech Computer Science student with a keen
+                interest in technology and programming. I am currently
+                exploring HTML, CSS, and GitHub, and have some basic
+                knowledge of Java while building my foundation in computer
+                science. I enjoy learning new concepts, experimenting with
+                technology, and reading books in my free time. I believe
+                every new skill is an opportunity to grow, create, and
+                discover something new.
+            </p>
+
+        </section>
+
+
+        <!-- Interests -->
+
+        <section class="section">
+
+            <h2>💻 Interests & Hobbies</h2>
+
+            <div class="tags">
+
+                <span class="tag">🌐 HTML</span>
+
+                <span class="tag">🎨 CSS</span>
+
+                <span class="tag">🦑 GitHub</span>
+
+                <span class="tag">🔧 Git</span>
+
+                <span class="tag">☕ know basic Java</span>
+
+                <span class="tag">📚 Book Reading</span>
+
+                <span class="tag">💡 Technology</span>
+
+            </div>
+
+        </section>
+
+
+        <!-- Student Details -->
+
+        <section class="section">
+
+            <h2>🎓 Student Details</h2>
+
+            <div class="details">
+
+                <div class="detail">
+
+                    <h3>COURSE</h3>
+
+                    <p>B.Tech CSE</p>
+
+                </div>
+
+
+                <div class="detail">
+
+                    <h3>COLLEGE</h3>
+
+                    <p>DAVIET</p>
+
+                </div>
+
+
+                <div class="detail">
+
+                    <h3>YEAR</h3>
+
+                    <p>1st Year</p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- GitHub -->
+
+        <a
+            class="github"
+            href="https://github.com/Mannat2008-explore"
+            target="_blank"
+        >
+            Explore My GitHub →
+        </a>
+
+
+        <div class="footer">
+
+            Built with HTML & CSS • 2026
+
+        </div>
+
+
+    </main>
+
+</body>
+
+</html>
